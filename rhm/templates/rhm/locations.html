@@ -1,0 +1,222 @@
+{% extends "rhm/index.html" %}
+{% csrf_token %}
+{% load static %}
+{% block content %}
+
+
+        <div class="container-fluid" style="background-color: #F0F0F0;">
+          <div class="row" style="padding-top: 1rem;">
+            <!-- Area Chart -->
+              <div class="col-xl-9 col-lg-7">
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div
+                        class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                        <h6 class="m-0 font-weight-bold text-primary">Regulator Locations in Canada</h6>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body">
+                        <div class="chart-area">
+                          {{ div_map | safe }}
+                          {{ script_map | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-7">
+              <div class="card shadow mb-4">
+                  <!-- Card Header - Dropdown -->
+                  <div
+                      class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h6 class="m-0 font-weight-bold text-primary">Diagnostic Information</h6>
+                      <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i> -->
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Filter Regulators</div>
+                            <a class="dropdown-item" href="#" onClick="event.preventDefault();switchScatter();">Health Socre less than 50%</a>
+                            <a class="dropdown-item" href="#" onClick="event.preventDefault();switchCapacity();">Maintainance Required</a>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- Card Body -->
+                  <div class="card-body" style="height: 790px; overflow-y: scroll;">
+                    <table class="styled-table" style="opacity: 0.8;">
+                      <thead>
+                        <tr>
+                          <th scope="col">Regulator</th>
+                          <th scope="col">OP Pressure</th>
+                          <th scope="col">Health Score</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Regulator 1</th>
+                          <td>613.50</td>
+                          <td bgcolor="#05C985">91.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 2</th>
+                          <td>623.50</td>
+                          <td bgcolor="#05C985">99.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 3</th>
+                          <td>643.50</td>
+                          <td bgcolor="#05C985">95.60%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 4</th>
+                          <td>733.50</td>
+                          <td bgcolor='#EE423D'>18.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 5</th>
+                          <td>659.50</td>
+                          <td bgcolor="#05C985">91.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 6</th>
+                          <td>619.50</td>
+                          <td bgcolor="#05C985">96.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 7</th>
+                          <td>635.50</td>
+                          <td bgcolor="#05C985">99.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 8</th>
+                          <td>896.50</td>
+                          <td bgcolor="#EE423D">22.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 9</th>
+                          <td>613.50</td>
+                          <td bgcolor="#05C985" color="white">91.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 10</th>
+                          <td>653.50</td>
+                          <td bgcolor="#05C985">96.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 11</th>
+                          <td>613.50</td>
+                          <td bgcolor="#05C985">91.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 12</th>
+                          <td>623.50</td>
+                          <td bgcolor="#05C985">99.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 13</th>
+                          <td>643.50</td>
+                          <td bgcolor="#05C985">95.60%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 14</th>
+                          <td>733.50</td>
+                          <td bgcolor='#EE423D'>48.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 15</th>
+                          <td>659.50</td>
+                          <td bgcolor="#05C985">91.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 16</th>
+                          <td>619.50</td>
+                          <td bgcolor="#05C985">96.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 17</th>
+                          <td>635.50</td>
+                          <td bgcolor="#05C985">99.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 18</th>
+                          <td>896.50</td>
+                          <td bgcolor="#EE423D">12.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 19</th>
+                          <td>613.50</td>
+                          <td bgcolor="#05C985" color="white">91.30%</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Regulator 20</th>
+                          <td>653.50</td>
+                          <td bgcolor="#05C985">96.30%</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+          </div>
+            <!-- <div class="col-md-3.8">
+              <ul class="list-group ">
+                <li class="list-group-item">
+                    
+
+                </li>
+              </ul>
+              <br><br>
+              <ul class="list-group ">
+                <li class="list-group-item">
+                    <table class="table table-hover">
+                        <thead class="thead-dark">
+                          <tr>
+                            <th scope="col">Maintainance Required</th>
+                            <th scope="col">Remaining Life</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="table-danger">
+                            <th scope="row">Regulator 8</th>
+                            <td>0.5 years</td>
+                          </tr>
+                          <tr class="table-warning">
+                            <th scope="row">Regulator 4</th>
+                            <td>2 years</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                </li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+        <script>
+            var value = 1;
+
+            function invoke_ajax(evt){
+                evt.stopImmediatePropagation();
+                console.log("I'm here");
+
+                $.ajax({
+                    type: "POST", 
+                    url: "{% url 'rhm:details' %}", 
+                    data: {'val': value}, 
+                    success: function(response){
+
+                        console.log("Success!!")
+                        location.href = "http://127.0.0.1:8000/detail/"
+                        // console.log(response)
+
+                    }
+                });
+
+
+
+            }
+
+
+        </script>
+
+{% endblock %}

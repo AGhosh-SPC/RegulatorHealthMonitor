@@ -1,0 +1,240 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Regulator Health Monitor</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href={% static "rhm/css/vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'rhm/css/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'rhm/css/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Custom styles for this template -->
+    <link href={% static "rhm/css/sidebar.css" %} rel="stylesheet" />
+    <link href={% static "rhm/css/content.css" %} rel="stylesheet" />
+
+    <!-- Bokeh Imports -->
+
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-2.3.0.min.js"></script> 
+    <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-2.3.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <meta charset="utf-8" />
+
+  </head>
+
+  <body>
+    <div class="d-flex" id="wrapper">
+       <!-- Sidebar -->
+       <div class="border-right" id="sidebar-wrapper" style="background-color: #C9C9CF;">
+        <div class="sidebar-heading">
+          <img src="{% static 'rhm/images/spartan-1.png' %}", height="50px", width="50px">
+          SpartanPRO<sup>TM</sub>
+        </div>
+        <div class="list-group list-group-flush">
+          <div class="list-group-item list-group-item-action" style="background-color:#C9C9CF; font-weight: bold; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <button type="button" class="btn btn-dark" onclick="location.href = 'http://127.0.0.1:8000/detail';">&nbsp;<i class="fa fa-search"></i> &nbsp;&nbsp;&nbsp;Analysis&nbsp;&nbsp;</button>
+            <!-- <div class="container">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm">
+                    <label for="exampleFormControlSelect1"
+                      >Select Time Range</label
+                    >
+                    <select class="form-control form-control-sm">
+                      <option>Select</option>
+                      <option>2015-2016</option>
+                      <option>2016-2017</option>
+                      <option>2017-2018</option>
+                      <option>2018-2019</option>
+                      <option>2019-2020</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm">
+                    <label for="exampleFormControlSelect1"
+                      >Select Analysis Type</label
+                    >
+                    <select class="form-control form-control-sm">
+                      <option>Select</option>
+                      <option>Analyze Historical Data</option>
+                      <option>Predict Future Failures</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm">
+                    <label for="exampleFormControlSelect1"
+                      >Select Options</label
+                    >
+                    <select class="form-control form-control-sm">
+                      <option>Select</option>
+                      <option>All</option>
+                      <option>Health Score 100%</option>
+                      <option>Health Score <50%</option>
+                      <option>Health Score <10%</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <!-- <div class="list-group-item list-group-item-action" style="background-color: #a6c8e0;">
+            <div class="container">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm">
+                    <ul class="nav nav-pills">
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          id="home-tab"
+                          data-toggle="tab"
+                          href="#home"
+                          role="tab"
+                          aria-controls="home"
+                          aria-selected="true"
+                          >Trend</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a
+                          class="nav-link"
+                          id="profile-tab"
+                          data-toggle="tab"
+                          href="#profile"
+                          role="tab"
+                          aria-controls="profile"
+                          aria-selected="false"
+                          >Anomaly</a
+                        >
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent" style="text-align: justify;">
+                      <div
+                        class="tab-pane fade show active"
+                        id="home"
+                        role="tabpanel"
+                        aria-labelledby="home-tab"
+                      ><br><br><br>
+                      <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Individual Charts
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Flow Trend for Year 2020</a>
+                          <a class="dropdown-item" href="#">Inlet Pressure Trend for Year 2020</a>
+                          <a class="dropdown-item" href="#">Outlet Pressure Trend for Year 2020</a>
+                        </div><br><br>
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Combination Charts
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Flow Trend Vs. Inlet Pressure Trend for Year 2020</a>
+                          <a class="dropdown-item" href="#">Flow Trend Vs. Outlet Pressure Trend for Year 2020</a>
+                          <a class="dropdown-item" href="#">Outlet Pressure Trend Vs. Inlet Pressure Trend for Year 2020</a>
+                        </div>
+                      </div>
+                      </div>
+                      <div
+                        class="tab-pane fade"
+                        id="profile"
+                        role="tabpanel"
+                        aria-labelledby="profile-tab"
+                      ><br><br><br>
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Select Chart Type
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Flow V. Inlet Pressure for Year 2020</a>
+                            <a class="dropdown-item" href="#">Inlet Pressure V. Outlet Pressure for Year 2020</a>
+                            <a class="dropdown-item" href="#">Flow Vs. Outlet Pressure for Year 2020</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom" style="background-color: #C9C9CF; height: 80px;">
+          <div class="navbarheader" style="font-size: 1.3rem; font-weight: bold; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Regulator Health Monitor</div>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+              <!-- <li class="nav-item active">
+                <a class="nav-link" href="http://127.0.0.1:8000/" style="font-weight: bold;"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li> -->
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  User Actions
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="navbarDropdown"
+                >
+                  <a class="dropdown-item" href="#">Enter feedback</a>
+                  <a class="dropdown-item" href="#">Contact Customer Support</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Login</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        {% block content %}
+
+        {% endblock %}
+
+      </div>
+      <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+
+
+    <!-- Menu Toggle Script -->
+    <script>
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+  </body>
+</html>

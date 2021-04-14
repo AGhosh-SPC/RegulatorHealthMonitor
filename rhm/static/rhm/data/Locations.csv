@@ -1,0 +1,30 @@
+Brand,Site Number,Site Name,Ownership Type,Street Address,City,State/Province,Country,Postcode,Phone Number,Timezone,Longitude,Latitude
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,AB,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-114.14,51.04
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,AB,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-114.14,51.1
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,SK,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-104.62,50.45
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,BC,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-128.6,54.52
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,AB,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-118.82,55.18
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,AB,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-111.43,56.77
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,AB,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-111.47,56.74
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,AB,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-111.34,56.67
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,BC,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-121.62,55.7
+Emerson,1234,ABC,Licensed,925 Memorial Dr,Fort McMurray,SK,CA,T9K 0K4,907-339-0900,GMT-09:00 America/Anchorage,-111.34,50.39
+Emerson,3513-125945,Safeway-Anchorage #1809,Licensed,5600 Debarr Rd Ste 9,Anchorage,AK,CA,995042300,907-339-0900,GMT-09:00 America/Anchorage,-121.34,51.21
+Emerson,74352-84449,Safeway-Anchorage #2628,Licensed,1725 Abbott Rd,Anchorage,AK,CA,995073444,907-339-2800,GMT-09:00 America/Anchorage,-111.34,53.14
+Emerson,12449-152385,Safeway - Anchorage #1813,Licensed,1501 Huffman Rd,Anchorage,AK,CA,995153596,907-339-1300,GMT-09:00 America/Anchorage,-118.34,53.11
+Emerson,24936-233524,100th & C St - Anchorage,Company Owned,"320 W. 100th Ave, 100, Southgate Shopping Ctr - Anchorage",Anchorage,AK,CA,99515,(907) 227-9631,GMT-09:00 America/Anchorage,-116.34,55.13
+Emerson,8973-85630,Old Seward & Diamond,Company Owned,1005 E Dimond Blvd,Anchorage,AK,CA,995152050,907-344-4160,GMT-09:00 America/Anchorage,-119.34,59.14
+Emerson,72788-84447,Fred Meyer - Anchorage #11,Licensed,1000 E Northern Lights Blvd,Anchorage,AK,CA,995084218,907-264-9600,GMT-09:00 America/Anchorage,-112.34,52.19
+Emerson,79549-106150,Safeway - Anchorage #520,Licensed,3101 PENLAND PKWY.,Anchorage,AK,CA,995081928,907-339-5200,GMT-09:00 America/Anchorage,-123.34,57.22
+Emerson,75988-107245,ANC Main Terminal Ticketing,Licensed,"HMSHost, 500 West International Airport",Anchorage,AK,CA,99502,,GMT-09:00 America/Anchorage,-105.34,51.18
+Emerson,11426-99254,Tudor Rd and C Street,Company Owned,"110 W. Tudor Rd, E",Anchorage,AK,CA,995037247,907-561-3141,GMT-09:00 America/Anchorage,-111.34,61.18
+Emerson,20349-108249,Fred Meyer-Anchorage East #18,Licensed,7701 Debarr Road,Anchorage,AK,US,99504,907-269-1700,GMT-09:00 America/Anchorage,-149.74,61.21
+Emerson,74266-52019,Safeway-Anchorage #1817,Licensed,7731 E Northern Lights Blvd,Anchorage,AK,US,995043554,907-331-1700,GMT-09:00 America/Anchorage,-149.74,61.2
+Emerson,72727-61659,Fred Meyer - Anchorage #656,Licensed,2300 Abbott Road,Anchorage,AK,US,995074456,907-365-2000,GMT-09:00 America/Anchorage,-149.84,61.14
+Emerson,76943-129964,Target Anchorage NE T-2371,Licensed,"1200 N Muldoon Rd, Suite F",Anchorage,AK,US,995046105,,GMT-09:00 America/Anchorage,-149.74,61.23
+Emerson,72784-33081,Fred Meyer - Anchorage (Dimond) #71,Licensed,2000 W Dimond Blvd,Anchorage,AK,US,995151453,907-267-6700,GMT-09:00 America/Anchorage,-149.92,61.14
+Emerson,9622-85633,Tudor & Lake Otis- Anchorage,Company Owned,"2421 East Tudor Road, Suite 8",Anchorage,AK,US,995071128,907-561-1644,GMT-09:00 America/Anchorage,-149.84,61.18
+Emerson,75323-100264,Elmendorf AFB,Licensed,Bldg 5800 Westover Avenue,Anchorage,AK,US,99506,907-753-4420,GMT-09:00 America/Anchorage,-149.75,61.23
+Emerson,79664-81037,Safeway-Anchorage #1812,Licensed,"4000 W Dimond Blvd, Anchorage Fifth Avenue",Anchorage,AK,US,995021401,,GMT-09:00 America/Anchorage,-149.96,61.14
+Emerson,28191-249962,Teavana - Anchorage Fifth Avenue,Company Owned,"320 West 5th Avenue, #D50A",Anchorage,AK,US,99501,907-274-2022,GMT-09:00 America/Anchorage,-149.89,61.22
+Emerson,3774-145044,Target Anchorage South T-2372,Licensed,150 W 100th Ave Suite A,Anchorage,AK,US,995152673,907-267-7500,GMT-09:00 America/Anchorage,-149.88,61.13
